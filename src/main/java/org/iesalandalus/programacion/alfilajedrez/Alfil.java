@@ -13,8 +13,8 @@ import javax.naming.OperationNotSupportedException;
  */
 public class Alfil {
 
-	private Color color;
 	private Posicion posicion;
+	private Color color;
 
 	public Alfil() {
 		color = Color.NEGRO;
@@ -31,10 +31,10 @@ public class Alfil {
 	}
 
 	public Alfil(Color color, char columnaInicial) {
+		setColor(color);
 		if (columnaInicial != 'c' && columnaInicial != 'f') {
 			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		}
-		setColor(color);
 		if (color == Color.BLANCO) {
 			posicion = new Posicion(1, columnaInicial);
 		} else if (color == Color.NEGRO) {
@@ -120,6 +120,11 @@ public class Alfil {
 		}
 		Alfil other = (Alfil) obj;
 		return color == other.color && Objects.equals(posicion, other.posicion);
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s, color=%s", posicion, color);
 	}
 
 }
