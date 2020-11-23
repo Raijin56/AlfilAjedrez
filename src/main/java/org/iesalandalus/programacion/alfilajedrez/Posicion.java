@@ -9,14 +9,19 @@ package org.iesalandalus.programacion.alfilajedrez;
  */
 public class Posicion {
 
-	private int fila;
-	private char columna;
-
 	private static final int MIN_FILA = 1;
 	private static final int MAX_FILA = 8;
 	private static final char MIN_COLUMNA = 'a';
 	private static final char MAX_COLUMNA = 'h';
+	
+	private int fila;
+	private char columna;
 
+	public Posicion(int fila, char columna) {
+		setFila(fila);
+		setColumna(columna);
+	}
+	
 	private void setFila(int fila) {
 		if (fila < MIN_FILA || fila > MAX_FILA) {
 			throw new IllegalArgumentException("ERROR: Fila no válida.");
