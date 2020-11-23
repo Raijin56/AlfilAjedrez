@@ -3,6 +3,8 @@
  */
 package org.iesalandalus.programacion.alfilajedrez;
 
+import java.util.Objects;
+
 /**
  * @author Alberto
  *
@@ -29,7 +31,7 @@ public class Posicion {
 		this.fila = posicion.getFila();
 		this.columna = posicion.getColumna();
 	}
-	
+
 	private void setFila(int fila) {
 		if (fila < MIN_FILA || fila > MAX_FILA) {
 			throw new IllegalArgumentException("ERROR: Fila no válida.");
@@ -54,4 +56,21 @@ public class Posicion {
 		return columna;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(columna, fila);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Posicion)) {
+			return false;
+		}
+		Posicion other = (Posicion) obj;
+		return columna == other.columna && fila == other.fila;
+	}
+	
 }
