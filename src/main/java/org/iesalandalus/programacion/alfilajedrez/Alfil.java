@@ -25,6 +25,18 @@ public class Alfil {
 			posicion = new Posicion(8, 'f');
 		}
 	}
+	
+	public Alfil(Color color, char columnaInicial) {
+		if (columnaInicial != 'c' && columnaInicial != 'f') {
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
+		}
+		setColor(color);
+		if (color == Color.BLANCO) {
+			posicion = new Posicion(1, columnaInicial);
+		} else if (color == Color.NEGRO) {
+			posicion = new Posicion(8, columnaInicial);
+		}
+	}
 
 	private void setPosicion(Posicion posicion) {
 		if (color == null) {
