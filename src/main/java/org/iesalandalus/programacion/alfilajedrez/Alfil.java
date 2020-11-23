@@ -17,6 +17,15 @@ public class Alfil {
 		posicion = new Posicion(8, 'f');
 	}
 
+	public Alfil(Color color) {
+		setColor(color);
+		if (color == Color.BLANCO) {
+			posicion = new Posicion(1, 'f');
+		} else if (color == Color.NEGRO) {
+			posicion = new Posicion(8, 'f');
+		}
+	}
+
 	private void setPosicion(Posicion posicion) {
 		if (color == null) {
 			throw new NullPointerException("ERROR: No se puede asignar una posición nula.");
