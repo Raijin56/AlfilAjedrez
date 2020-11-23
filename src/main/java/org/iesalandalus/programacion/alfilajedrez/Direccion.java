@@ -4,7 +4,7 @@
 package org.iesalandalus.programacion.alfilajedrez;
 
 /**
- * @author raijin
+ * @author Alberto
  *
  */
 public enum Direccion {
