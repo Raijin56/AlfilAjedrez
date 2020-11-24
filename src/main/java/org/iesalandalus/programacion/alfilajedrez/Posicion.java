@@ -15,7 +15,7 @@ public class Posicion {
 	private static final int MAX_FILA = 8;
 	private static final char MIN_COLUMNA = 'a';
 	private static final char MAX_COLUMNA = 'h';
-	
+
 	private int fila;
 	private char columna;
 
@@ -23,7 +23,7 @@ public class Posicion {
 		setFila(fila);
 		setColumna(columna);
 	}
-	
+
 	public Posicion(Posicion posicion) {
 		if (posicion == null) {
 			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
@@ -77,5 +77,5 @@ public class Posicion {
 	public String toString() {
 		return String.format("fila=%s, columna=%s", fila, columna);
 	}
-	
+
 }
